@@ -1,6 +1,10 @@
 # countdown.js
 zepto/jquery 倒计时插件, 适用于抢购活动的列表页
 
+### Demo:
+
+https://hehaibao.github.io/countdown/index.html
+
 ### 使用方法
 
 1. 引入zepto/jquery
