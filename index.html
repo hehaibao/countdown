@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zepto/jQuery 倒计时插件</title>
+    <style>
+        body{margin:0;padding:0;}
+        li{list-style: none;margin-bottom: 20px;}
+        li.red{color: red;}
+        .demo h2{margin: 30px;}
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <h2>倒计时（支持多个同时）</h2>
+
+        <ul>
+            <li>1. <span data-countdown="2018/06/05 13:08:00"></span></li>
+            <li>2. <span data-countdown="2040/08/05 23:11:30"></span></li>
+            <li>3. <span data-countdown="2018/06/08 09:11:02"></span></li>
+            <li>4. <span data-countdown="2020/02/08 10:30:39"></span></li>
+            <li>5. <span data-countdown="2019/01/05 10:00:08"></span></li>
+        </ul>
+    
+    </div>
+
+    <!-- <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+    <script src="countdown.min.js"></script>
+    <script>
+        (function(){
+            // $('[data-countdown]').countdown(); //默认调用
+
+            //自定义调用
+            $('[data-countdown]').countdown({
+                txt: '距离活动结束还有：',
+                sp: '-',
+                callback: function(v){
+                    //活动结束后的回调
+                    $(v).parents('li').addClass('red');
+                }
+            });
+        }());
+    </script>
+</body>
+</html>
