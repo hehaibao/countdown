@@ -10,6 +10,7 @@
             this.$childEl = options && options.child || '.countdown-box'; //子元素DOM,用于 有特殊自定义模板时
             this.txt = options && options.txt || '距结束'; //提示文字
             this.sp = options && options.sp || ':'; //分隔符
+            this.isZh = options && options.isZh || false; //是否在模板中提示中文
             this.tpl = ''; //模板【格式默认：天:时:分:秒】
             this.dateValue = ''; //截止日期
             this.timer = null; //计时器
@@ -44,7 +45,13 @@
                     }
                 } else {
                      //定义输出的模板
-                    this.tpl = this.txt + '<span class="d">'+this.format(days)+'</span>'+this.sp+'<span class="h">'+this.format(hours)+'</span>'+this.sp+'<span class="m">'+this.format(min)+'</span>'+this.sp+'<span class="s">'+this.format(sec)+'</span>';
+                    if(this.isZh) {
+                        //中文提示 模板
+                        this.tpl = this.txt + '<span class="d">'+this.format(days)+'</span>天<span class="h">'+this.format(hours)+'</span>时<span class="m">'+this.format(min)+'</span>分<span class="s">'+this.format(sec)+'</span>秒';
+                    } else {
+                        //符号提示 模板
+                        this.tpl = this.txt + '<span class="d">'+this.format(days)+'</span>'+this.sp+'<span class="h">'+this.format(hours)+'</span>'+this.sp+'<span class="m">'+this.format(min)+'</span>'+this.sp+'<span class="s">'+this.format(sec)+'</span>';
+                    }
                 }
 
                 if($box.length) {
