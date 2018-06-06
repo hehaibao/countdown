@@ -40,3 +40,14 @@ https://hehaibao.github.io/countdown/index.html
 }());
 ```
 
+### 可选参数：
+
+
+字段名 | 类型 | 默认值 |
+------------ | ------------- | -------------
+txt | String | 距结束(可选) |
+sp | String  | :(可选) |
+isZh | Boolean | false(可选) |
+callback | Function | 时间结束后的回调(可选) |
+
+
