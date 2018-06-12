@@ -8,7 +8,7 @@
         function countDown() {
             this.$element = null; //DOM
             this.$childEl = options && options.child || '.countdown-box'; //子元素DOM,用于 有特殊自定义模板时
-            this.txt = options && options.txt || '距结束'; //提示文字
+            this.txt = options && options.txt || ''; //提示文字
             this.sp = options && options.sp || ':'; //分隔符
             this.isZh = options && options.isZh || false; //是否在模板中提示中文
             this.tpl = ''; //模板【格式默认：天:时:分:秒】
