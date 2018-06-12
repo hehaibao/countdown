@@ -33,7 +33,8 @@
                     hours = parseInt((range % secDay) / secHour),
                     min = parseInt(((range % secDay) % secHour) / 60),
                     sec = parseInt(((range % secDay) % secHour) % 60),
-                    $box = this.$element.find(this.$childEl);
+                    $box = this.$element.find(this.$childEl),
+                    spArr = this.isZh ? ['天','时','分','秒'] : [this.sp,this.sp,this.sp,''];
 
                 if(range <= 0) {
                     //活动结束
@@ -44,14 +45,8 @@
                         options.callback(this.$element); //用于处理结束后的回调
                     }
                 } else {
-                     //定义输出的模板
-                    if(this.isZh) {
-                        //中文提示 模板
-                        this.tpl = this.txt + '<span class="d">'+this.format(days)+'</span>天<span class="h">'+this.format(hours)+'</span>时<span class="m">'+this.format(min)+'</span>分<span class="s">'+this.format(sec)+'</span>秒';
-                    } else {
-                        //符号提示 模板
-                        this.tpl = this.txt + '<span class="d">'+this.format(days)+'</span>'+this.sp+'<span class="h">'+this.format(hours)+'</span>'+this.sp+'<span class="m">'+this.format(min)+'</span>'+this.sp+'<span class="s">'+this.format(sec)+'</span>';
-                    }
+                    //定义输出的模板
+                    this.tpl = this.txt + '<span class="d">'+this.format(days)+'</span>'+spArr[0]+'<span class="h">'+this.format(hours)+'</span>'+spArr[1]+'<span class="m">'+this.format(min)+'</span>'+spArr[2]+'<span class="s">'+this.format(sec)+'</span>'+spArr[3]+'';
                 }
 
                 if($box.length) {
