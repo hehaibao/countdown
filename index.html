@@ -6,10 +6,12 @@
     <style>
         body{margin:0;padding:0;}
         li{list-style: none;margin-bottom: 20px;}
-        li.red{color: red;}
+        li.red, li.red .black{color: red;}
         .demo h2{margin: 30px;}
         ul{width: 25%;float: left;margin-bottom: 30px;}
-        .black span{background-color: #333;color: #fff;padding: 1px 3px;border-radius: 3px;margin: 0 3px;}
+        .black{color: #999;}
+        .black a{color: green;font-size: 18px;}
+        .black span{background-color: #333;color: #fff;padding: 1px 3px;border-radius: 3px;margin: 0 3px;font-size: 14px;}
     </style>
 </head>
 <body>
@@ -67,7 +69,7 @@
 
             //demo3
             $('.demo3 [data-countdown]').countdown({
-                txt: '距结束',
+                txt: '倒计时：',
                 isZh: true, //中文提示
                 callback: function(v){
                     //活动结束后的回调

@@ -46,7 +46,7 @@
                     }
                 } else {
                     //定义输出的模板
-                    this.tpl = this.txt + '<span class="d">'+this.format(days)+'</span>'+spArr[0]+'<span class="h">'+this.format(hours)+'</span>'+spArr[1]+'<span class="m">'+this.format(min)+'</span>'+spArr[2]+'<span class="s">'+this.format(sec)+'</span>'+spArr[3]+'';
+                    this.tpl = '<a class="txt">'+ this.txt +'</a>' + '<span class="d">'+this.format(days)+'</span>'+spArr[0]+'<span class="h">'+this.format(hours)+'</span>'+spArr[1]+'<span class="m">'+this.format(min)+'</span>'+spArr[2]+'<span class="s">'+this.format(sec)+'</span>'+spArr[3]+'';
                 }
 
                 if($box.length) {
