@@ -1,9 +1,19 @@
 /*
-* Zepto/jQuery 倒计时插件
+* Zepto/jQuery countdown倒计时插件
 * by haibao[http://www.hehaibao.com/]
+* https://github.com/hehaibao/countdown
+* MIT
 */
-;(function ($) {
-
+;(function(factory){
+    if(typeof define === 'function' && define.amd) { // AMD
+        // you may need to change `define([------>'jquery'<------], factory)` 
+        // if you use zepto, change it rely name, such as `define(['zepto'], factory)`
+        define(['jquery'], factory)
+        // define(['zepto'], factory)
+    } else { // Global
+        factory(window.jQuery || window.Zepto)
+    }
+})(function($,undefined){
     $.fn.countdown = function (options) {
         function countDown() {
             this.$element = null; //DOM
@@ -71,5 +81,4 @@
             }, 1000);
         });
     }
-
-})(window.jQuery || window.Zepto);
+});
